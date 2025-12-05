@@ -8,6 +8,14 @@
       "progress": 10,
       "tags": ["ACE", "planning-system", "supabase", "github-pages"],
       "description": "以 ACE 模型為核心的個人計劃系統（Personal OS v2）。"
+    },
+    {
+      "id": "ai-assistant-integration",
+      "title": "AI Assistant Integration",
+      "status": "planned",
+      "progress": 0,
+      "tags": ["ACE", "ai-assistant", "integration", "chatgpt"],
+      "description": "讓 AI 助理能穩定讀取與理解 OS v2 資料，成為長期專案顧問。"
     }
   ]
 }
