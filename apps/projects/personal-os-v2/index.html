@@ -1,1 +1,134 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>Hades Personal OS v2 · ACE Project Console</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <header class="page-header">
+    <div class="page-header-left">
+      <a href="../../hub/" class="back-link">← Back to Hub</a>
+      <h1 id="project-title">Hades Personal OS v2</h1>
+      <p id="project-subtitle" class="subtitle">ACE Project Console</p>
+      <div class="meta-row">
+        <span id="project-status" class="badge">active</span>
+        <span id="project-tags" class="tag-row"></span>
+      </div>
+    </div>
+    <div class="page-header-right">
+      <div class="progress-wrap">
+        <span class="progress-label">Overall Progress</span>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <span id="progress-value" class="progress-value">0%</span>
+      </div>
+    </div>
+  </header>
 
+  <nav class="ace-tabs">
+    <button class="ace-tab active" data-tab="align">ALIGN</button>
+    <button class="ace-tab" data-tab="create">CREATE</button>
+    <button class="ace-tab" data-tab="execute">EXECUTE</button>
+  </nav>
+
+  <main class="layout">
+    <!-- ALIGN -->
+    <section id="section-align" class="ace-section active">
+      <h2>ALIGN · 對齊方向</h2>
+
+      <div class="grid two">
+        <article class="panel">
+          <h3>What · 這個專案要做什麼？</h3>
+          <p id="align-what"></p>
+        </article>
+
+        <article class="panel">
+          <h3>For Who · 給誰用？</h3>
+          <ul id="align-who" class="list"></ul>
+        </article>
+      </div>
+
+      <article class="panel">
+        <h3>Why · 為什麼要做？</h3>
+        <ul id="align-why" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h3>Success Criteria · 成功定義</h3>
+        <ul id="align-success" class="list"></ul>
+      </article>
+    </section>
+
+    <!-- CREATE -->
+    <section id="section-create" class="ace-section">
+      <h2>CREATE · 拆解與設計</h2>
+
+      <article class="panel">
+        <h3>Modules · 模組拆解</h3>
+        <ul id="create-modules" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h3>Features · 功能列表</h3>
+        <ul id="create-features" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h3>Architecture · 架構草圖（文字版）</h3>
+        <ul id="create-architecture" class="list"></ul>
+      </article>
+
+      <article class="panel priority-panel">
+        <h3>Priority · 優先順序</h3>
+        <div class="priority-columns">
+          <div>
+            <h4>M · Must-have</h4>
+            <ul id="priority-must" class="list small"></ul>
+          </div>
+          <div>
+            <h4>S · Should-have</h4>
+            <ul id="priority-should" class="list small"></ul>
+          </div>
+          <div>
+            <h4>C · Could-have</h4>
+            <ul id="priority-could" class="list small"></ul>
+          </div>
+          <div>
+            <h4>W · Won't-do now</h4>
+            <ul id="priority-wont" class="list small"></ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXECUTE -->
+    <section id="section-execute" class="ace-section">
+      <h2>EXECUTE · 執行與推進</h2>
+
+      <article class="panel">
+        <h3>Next Actions · 下一步行動（最多 3 項）</h3>
+        <ol id="execute-next" class="list ordered"></ol>
+      </article>
+
+      <article class="panel">
+        <h3>Roadmap · 版本路線圖</h3>
+        <ul id="execute-roadmap" class="list"></ul>
+      </article>
+
+      <article class="panel">
+        <h3>Logs · 紀錄 / 里程碑</h3>
+        <ul id="execute-logs" class="list small"></ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Hades Personal OS v2 · Powered by ACE Framework</span>
+  </footer>
+
+  <script src="project.js"></script>
+</body>
+</html>
