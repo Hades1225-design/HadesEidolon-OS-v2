@@ -4,6 +4,13 @@ function createProjectCard(project) {
   const card = document.createElement("article");
   card.className = "card";
 
+  // 讓整張卡片可點擊跳轉
+  card.addEventListener("click", () => {
+    if (project.id) {
+      window.location.href = `../projects/${project.id}/`;
+    }
+  });
+
   const header = document.createElement("div");
   header.className = "card-header";
 
@@ -31,7 +38,6 @@ function createProjectCard(project) {
   progressFill.className = "progress-fill";
   const progress = Number(project.progress || 0);
   progressFill.style.width = `${Math.max(0, Math.min(100, progress))}%`;
-
   progressBar.appendChild(progressFill);
 
   const progressLabel = document.createElement("div");
