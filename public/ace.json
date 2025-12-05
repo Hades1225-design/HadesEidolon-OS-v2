@@ -1,1 +1,103 @@
-
+{
+  "updatedAt": "2025-12-05T00:00:00Z",
+  "projects": [
+    {
+      "id": "personal-os-v2",
+      "title": "Hades Personal OS v2",
+      "status": "active",
+      "progress": 10,
+      "tags": ["ACE", "planning-system", "supabase", "github-pages"],
+      "align": {
+        "what": "打造一套以 ACE 為核心引擎的個人計劃系統，能統一管理所有專案、任務、目標，並可長期複製與擴展。",
+        "why": [
+          "過去的計畫分散、結構不一，容易做一做失去方向。",
+          "沒有完整「從想法 → 企劃 → 拆解 → 執行」的標準流程。",
+          "希望建立能長期持續、可複製、可自動化的個人 OS。"
+        ],
+        "who": [
+          "現在的我：建立清晰、可持續、可複製的工作方式。",
+          "未來的我：不論轉職、跳領域，都能用這套 OS 快速進入狀態。",
+          "也可能給未來想打造自己系統的人做示範。"
+        ],
+        "success": [
+          "所有專案都能自動生成 ACE 企劃書。",
+          "每天會自願打開 OS，並依照它前進。",
+          "能管理多個並行專案（>10）而不混亂。",
+          "ChatGPT 能根據 ACE 狀態給出有效下一步建議。",
+          "系統能成為未來任何計畫的標準框架。"
+        ]
+      },
+      "create": {
+        "modules": [
+          "ACE Engine：計劃標準格式（ALIGN / CREATE / EXECUTE）",
+          "Projects 模組：管理專案、狀態、ACE 三段式",
+          "Tasks 模組：任務、優先順序、進度",
+          "Areas 模組：人生領域分類",
+          "Admin（後台）：新增、編輯、管理資料",
+          "Hub（前台展示）：公開專案或自己查看的主視覺",
+          "API / JSON 模組：plans.json / ace.json",
+          "AI Assistant 模組：ChatGPT 自動解析 ACE"
+        ],
+        "features": [
+          "新增專案時自動生成 ACE 模板",
+          "專案可編輯 ALIGN / CREATE / EXECUTE 區塊",
+          "進度條（progress）與狀態顯示",
+          "設定下一步 Next Actions",
+          "Roadmap 版本規劃（v0.1 / v0.3 / v0.5 / v1.0）",
+          "專案與任務的關聯（FK）",
+          "公開 API：ace.json（給 ChatGPT 讀取）",
+          "私有後台（Supabase Auth）",
+          "深色 UI（統一 OS 視覺）"
+        ],
+        "architecture": [
+          "前端：GitHub Pages（/apps/hub, /apps/projects/...）",
+          "資料庫：Supabase PostgreSQL（areas, projects, tasks, logs, tags）",
+          "API / JSON：public/plans.json & public/ace.json 作為公開讀取介面",
+          "後台：未來使用 Supabase Auth + JS Admin 介面"
+        ],
+        "priority": {
+          "must": [
+            "Projects 模組（含 ACE 三段）",
+            "Tasks 模組",
+            "Supabase schema",
+            "前端專案頁（ACE 顯示）",
+            "plans.json / ace.json API"
+          ],
+          "should": [
+            "Hub UI 美化與深色主題",
+            "Roadmap 介面化",
+            "基本的登入 / 權限管控"
+          ],
+          "could": [
+            "匯出 PDF 報告",
+            "自動化寫日誌",
+            "外部工具整合（例如日曆）"
+          ],
+          "wont": [
+            "行動裝置原生 App（目前版本不做）",
+            "外掛式插件系統（待系統成熟後再評估）"
+          ]
+        }
+      },
+      "execute": {
+        "progress": 10,
+        "nextActions": [
+          "建立 Supabase projects 表格並加入 ACE 欄位",
+          "在前端 /apps/projects/personal-os-v2/ 完成 ACE 專案頁面",
+          "實作第一版 ace.json 產生流程（可先手動維護）"
+        ],
+        "roadmap": [
+          "v0.1：ACE 模板完成 + 基本資料表建立",
+          "v0.3：後台 Admin + 專案/任務管理可用",
+          "v0.5：Hub + plans.json + ace.json 對外穩定",
+          "v1.0：完整 Personal OS v2，日常穩定使用"
+        ],
+        "logs": [
+          "2025-12：確立 ACE 為 OS 核心引擎",
+          "2025-12：完成 Personal OS v2 的 ACE 企劃初版",
+          "2025-12：決定資料庫使用 Supabase，前端使用 GitHub Pages"
+        ]
+      }
+    }
+  ]
+}
