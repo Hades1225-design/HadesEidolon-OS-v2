@@ -99,5 +99,92 @@
         ]
       }
     }
+  ],{
+  "updatedAt": "2025-12-05T00:00:00Z",
+  "projects": [
+    { 
+      ... 這是你原本 personal-os-v2 那整個物件 ...
+    },
+    {
+      "id": "ai-assistant-integration",
+      "title": "AI Assistant Integration",
+      "status": "planned",
+      "progress": 0,
+      "tags": ["ACE", "ai-assistant", "integration", "chatgpt"],
+      "align": {
+        "what": "讓 AI 助理能穩定讀取與理解 Hades Personal OS v2 的資料，並提供有結構的建議與下一步行動。",
+        "why": [
+          "現在 AI 對專案的理解多半是一次性的，需要重複解釋。",
+          "希望 AI 能追蹤 ACE 狀態，協助專案持續推進。",
+          "未來轉職或做新專案時，希望 AI 能像熟悉我系統的人類助理一樣幫忙。"
+        ],
+        "who": [
+          "現在與未來的我。",
+          "可能未來想參考這種整合方式的人。"
+        ],
+        "success": [
+          "AI 能正確描述各專案的現況與 ACE 內容。",
+          "AI 能根據 execute.nextActions 提供具體協助。",
+          "新增專案後，只要照 ACE 填寫，AI 就能直接理解。"
+        ]
+      },
+      "create": {
+        "modules": [
+          "Data Interface 模組：定義 plans.json / ace.json 結構與更新方式",
+          "Prompt / Instruction 模組：給 AI 的系統說明與使用規範",
+          "Project Selector 模組：指定要討論哪個專案的方式",
+          "Safety / Privacy 模組：哪些資料可以公開，哪些只在本地使用"
+        ],
+        "features": [
+          "AI 能列出所有專案與進度",
+          "AI 能針對單一專案讀取並總結 ACE 內容",
+          "AI 能提出下一步行動建議並協助拆解任務",
+          "AI 能指出資料缺漏（例如缺少 success criteria 或 roadmap）"
+        ],
+        "architecture": [
+          "資料來源：GitHub Pages 上的 public/*.json",
+          "主要結構：align / create / execute 三段式固定 key",
+          "用法：在對話中提供 JSON 內容或 URL，AI 根據結構解析",
+          "未來擴展：以 Supabase Edge Functions 提供更動態的 API"
+        ],
+        "priority": {
+          "must": [
+            "定義與固定 ace.json 資料結構",
+            "完成至少一個專案（personal-os-v2）的 AI 閱讀測試",
+            "寫出一份標準 prompt，讓未來的對話可以重複使用"
+          ],
+          "should": [
+            "為多個專案建立一致格式，減少 AI 理解誤差",
+            "建立錯誤處理策略（當資料缺漏或格式壞掉時的應對）"
+          ],
+          "could": [
+            "自動產出每週專案總結",
+            "AI 主動提醒未執行的 nextActions"
+          ],
+          "wont": [
+            "將所有私人資料完全公開到互聯網（保持一定隱私界線）"
+          ]
+        }
+      },
+      "execute": {
+        "progress": 0,
+        "nextActions": [
+          "在 docs/ 中寫一份「給 AI 助理看的 OS v2 使用說明」。",
+          "在 ChatGPT 測試讀取 personal-os-v2 的 ACE 資料，檢查理解程度。",
+          "思考哪些資料不應該公開在 ace.json（隱私 / 敏感資訊）。"
+        ],
+        "roadmap": [
+          "v0.1：AI 能正確解讀 1 個專案的 ACE。",
+          "v0.3：AI 能列出多個專案並說出每個的進度與重點。",
+          "v0.5：AI 能根據 execute 區塊協助制定下一步計畫。",
+          "v1.0：AI 與 OS v2 緊密整合，成為日常的專案顧問。"
+        ],
+        "logs": [
+          "2025-12：將 AI Assistant Integration 正式列為 OS v2 子專案。",
+          "2025-12：初版 ace.json 結構確立。"
+        ]
+      }
+    }
   ]
+}
 }
